@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { isInNodeRuntime } from "@repo/node-utils/misc";
-import { ls } from "@repo/node-utils/fs";
+import { isInNodeRuntime } from "@iamhoonse-js/node-utils/misc";
+import { ls } from "@iamhoonse-js/node-utils/fs";
 import { USE_MSW } from "../configs/mocks";
 import ApplyMSW from "../containers/ApplyMSW";
 import "./globals.css";

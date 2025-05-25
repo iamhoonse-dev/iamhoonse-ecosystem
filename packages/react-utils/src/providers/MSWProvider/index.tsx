@@ -1,7 +1,7 @@
 "use client";
 
 import { type FC, type PropsWithChildren, useEffect, useState } from "react";
-import { initMockWorker } from "@repo/browser-utils/msw";
+import { initMockWorker } from "@iamhoonse-js/browser-utils/msw";
 
 interface Props {
   // The request handlers to be used by the mock worker.

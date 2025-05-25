@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { SampleButton } from "@repo/react-ui/components";
+import { SampleButton } from "@iamhoonse-js/react-ui/components";
 
 const meta = {
   title: "components/SampleButton",

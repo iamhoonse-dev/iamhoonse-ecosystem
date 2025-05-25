@@ -1,5 +1,5 @@
 import { type ComponentProps } from "react";
-import { type MSWProvider } from "@repo/react-utils/providers";
+import { type MSWProvider } from "@iamhoonse-js/react-utils/providers";
 
 /**
  * This is used to configure the mock service worker (MSW)

@@ -1,4 +1,4 @@
-import { withHelloWorld } from "@repo/react-utils/hocs";
+import { withHelloWorld } from "@iamhoonse-js/react-utils/hocs";
 
 const MessageContainer = ({
   title,

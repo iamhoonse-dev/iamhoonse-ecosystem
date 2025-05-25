@@ -1,5 +1,5 @@
 {
-  "name": "@repo/node-utils",
+  "name": "@iamhoonse-js/node-utils",
   "private": false,
   "publishConfig": {
     "access": "public"
@@ -55,10 +55,10 @@
     "msw": "2.4.3"
   },
   "devDependencies": {
-    "@repo/eslint-config": "workspace:*",
-    "@repo/typescript-config": "workspace:*",
-    "@repo/vitest-config": "workspace:*",
-    "@repo/helpers": "workspace:*",
+    "@iamhoonse-js/eslint-config": "workspace:*",
+    "@iamhoonse-js/typescript-config": "workspace:*",
+    "@iamhoonse-js/vitest-config": "workspace:*",
+    "@iamhoonse-js/helpers": "workspace:*",
     "@types/node": "^22.13.10",
     "@vitest/coverage-v8": "^3.1.1",
     "eslint": "^9.23.0",

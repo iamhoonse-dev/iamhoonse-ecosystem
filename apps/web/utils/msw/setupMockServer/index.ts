@@ -1,5 +1,5 @@
-import { initMockServer } from "@repo/node-utils/msw";
-import rootHandlers from "@repo/http-clients/mocks";
+import { initMockServer } from "@iamhoonse-js/node-utils/msw";
+import rootHandlers from "@iamhoonse-js/http-clients/mocks";
 import { USE_MSW } from "../../../configs/mocks";
 
 export default async function setupMockServer() {

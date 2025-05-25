@@ -1,5 +1,5 @@
 {
-  "name": "@repo/browser-utils",
+  "name": "@iamhoonse-js/browser-utils",
   "private": false,
   "publishConfig": {
     "access": "public"
@@ -52,10 +52,10 @@
     "dist"
   ],
   "devDependencies": {
-    "@repo/eslint-config": "workspace:*",
-    "@repo/helpers": "workspace:*",
-    "@repo/typescript-config": "workspace:*",
-    "@repo/vitest-config": "workspace:*",
+    "@iamhoonse-js/eslint-config": "workspace:*",
+    "@iamhoonse-js/helpers": "workspace:*",
+    "@iamhoonse-js/typescript-config": "workspace:*",
+    "@iamhoonse-js/vitest-config": "workspace:*",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.4.7",
     "@testing-library/user-event": "^14.6.1",

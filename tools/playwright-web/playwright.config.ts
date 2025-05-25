@@ -1,5 +1,5 @@
 import { defineConfig } from "@playwright/test";
-import base from "@repo/playwright-config/base";
+import base from "@iamhoonse-js/playwright-config/base";
 
 /**
  * Read environment variables from file.

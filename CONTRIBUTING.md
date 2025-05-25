@@ -4,7 +4,7 @@
 
 ## 📝 이슈 생성하기
 
-1. 프로젝트에서 발견한 버그를 보고하거나 새로운 기능을 제안하려면 [이슈 탭](https://github.com/iamhoonse-dev/turborepo-template/issues)을 방문해 주세요.
+1. 프로젝트에서 발견한 버그를 보고하거나 새로운 기능을 제안하려면 [이슈 탭](https://github.com/iamhoonse-dev/iamhoonse-ecosystem/issues)을 방문해 주세요.
 2. 이슈를 생성할 때는 명확하고 간결하게 설명해 주세요.
 3. 가능한 경우, 재현 가능한 단계와 관련 스크린샷을 포함해 주세요.
 
@@ -13,8 +13,8 @@
 1. 프로젝트를 포크하고 로컬 환경에 클론해 주세요:
 
    ```bash
-   git clone https://github.com/your-username/turborepo-template.git
-   cd turborepo-template
+   git clone https://github.com/your-username/iamhoonse-ecosystem.git
+   cd iamhoonse-ecosystem
    ```
 
 2. 새로운 브랜치를 생성해 주세요:
@@ -46,7 +46,7 @@
    ```bash
    git push origin feature/your-feature-name
    ```
-6. [Pull Request](https://github.com/iamhoonse-dev/turborepo-template/pulls)를 생성해 주세요.
+6. [Pull Request](https://github.com/iamhoonse-dev/iamhoonse-ecosystem/pulls)를 생성해 주세요.
 
 ## 🎨 코드 스타일
 

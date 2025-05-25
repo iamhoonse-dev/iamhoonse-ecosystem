@@ -5,7 +5,7 @@ import react from "@vitejs/plugin-react";
 import dtsPlugin from "vite-plugin-dts";
 import tsConfigPaths from "vite-tsconfig-paths";
 import tailwindcss from "@tailwindcss/vite";
-import { runWithGlob } from "@repo/helpers/runWithGlob";
+import { runWithGlob } from "@iamhoonse-js/helpers/runWithGlob";
 
 /**
  * Generates the file name for the library based on the format and entry name.

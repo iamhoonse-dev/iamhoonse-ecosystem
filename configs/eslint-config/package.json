@@ -1,5 +1,5 @@
 {
-  "name": "@repo/eslint-config",
+  "name": "@iamhoonse-js/eslint-config",
   "version": "0.0.0",
   "type": "module",
   "private": true,
@@ -9,7 +9,7 @@
     "./react-internal": "./react-internal.js"
   },
   "devDependencies": {
-    "@repo/eslint-plugin-sample": "workspace:*",
+    "@iamhoonse-js/eslint-plugin-sample": "workspace:*",
     "@eslint/js": "^9.23.0",
     "@next/eslint-plugin-next": "^15.2.1",
     "eslint": "^9.23.0",

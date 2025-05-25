@@ -1,5 +1,5 @@
 import { defineProject, mergeConfig } from "vitest/config";
-import base from "@repo/vitest-config/base";
+import base from "@iamhoonse-js/vitest-config/base";
 
 const ui = mergeConfig(
   base,

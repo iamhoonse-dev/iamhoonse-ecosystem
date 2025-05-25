@@ -207,7 +207,7 @@ jobs:
           docker compose -f docker-compose.gha.converted.yaml up web playwright-web --exit-code-from playwright-web
       - name: Copy E2E report from container
         run: |
-          CONTAINER_ID=$(docker ps -aqf "name=turborepo-template-playwright-web")
+          CONTAINER_ID=$(docker ps -aqf "name=iamhoonse-ecosystem-playwright-web")
           if [ -n "$CONTAINER_ID" ]; then
             docker cp $CONTAINER_ID:/app/tools/playwright-web/test-results/junit.xml ./junit.xml
           else
@@ -254,7 +254,7 @@ jobs:
           docker compose -f docker-compose.gha.converted.yaml up storybook storybook-test-runner --exit-code-from storybook-test-runner
       - name: Copy Storybook report from container
         run: |
-          CONTAINER_ID=$(docker ps -aqf "name=turborepo-template-storybook-test-runner")
+          CONTAINER_ID=$(docker ps -aqf "name=iamhoonse-ecosystem-storybook-test-runner")
           if [ -n "$CONTAINER_ID" ]; then
             docker cp $CONTAINER_ID:/app/apps/frontend-workshop/test-results/a11y-audit ./
           else
