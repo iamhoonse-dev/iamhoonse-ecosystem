@@ -1,7 +1,7 @@
 # 🗂️ Turborepo Template
 
-[![test](https://github.com/iamhoonse-dev/turborepo-template/actions/workflows/test.yml/badge.svg?event=push)](https://github.com/iamhoonse-dev/turborepo-template/actions/workflows/test.yml)
-[![Release](https://github.com/iamhoonse-dev/turborepo-template/actions/workflows/release.yml/badge.svg?event=push)](https://github.com/iamhoonse-dev/turborepo-template/actions/workflows/release.yml)
+[![test](https://github.com/iamhoonse-dev/iamhoonse-ecosystem/actions/workflows/test.yml/badge.svg?event=push)](https://github.com/iamhoonse-dev/iamhoonse-ecosystem/actions/workflows/test.yml)
+[![Release](https://github.com/iamhoonse-dev/iamhoonse-ecosystem/actions/workflows/release.yml/badge.svg?event=push)](https://github.com/iamhoonse-dev/iamhoonse-ecosystem/actions/workflows/release.yml)
 
 ## 📖 개요
 
