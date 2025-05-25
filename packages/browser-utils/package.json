@@ -1,0 +1,83 @@
+{
+  "name": "@repo/browser-utils",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "version": "0.0.0",
+  "author": "iamhoonse-dev",
+  "license": "MIT",
+  "description": "Browser utilities for various tasks including string manipulation, DOM operations, and MSW integration, and more.",
+  "keywords": [
+    "browser",
+    "utils",
+    "msw"
+  ],
+  "homepage": "https://github.com/iamhoonse-dev/ecosystem-sample/tree/main/packages/browser-utils",
+  "bugs": "https://github.com/iamhoonse-dev/ecosystem-sample/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iamhoonse-dev/ecosystem-sample.git",
+    "directory": "packages/browser-utils"
+  },
+  "type": "module",
+  "scripts": {
+    "lint": "eslint . --max-warnings 0",
+    "check-types": "tsc --noEmit",
+    "dev": "pnpm dlx msw init && tsc && vite build --watch",
+    "build": "tsc && vite build",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "coverage": "vitest run --coverage",
+    "preview": "vite preview"
+  },
+  "exports": {
+    "./string": {
+      "types": "./dist/string/index.d.ts",
+      "import": "./dist/string/index.es.js",
+      "require": "./dist/string/index.cjs.js"
+    },
+    "./dom": {
+      "types": "./dist/dom/index.d.ts",
+      "import": "./dist/dom/index.es.js",
+      "require": "./dist/dom/index.cjs.js"
+    },
+    "./msw": {
+      "types": "./dist/msw/index.d.ts",
+      "import": "./dist/msw/index.es.js",
+      "require": "./dist/msw/index.cjs.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/helpers": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "@repo/vitest-config": "workspace:*",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.4.7",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/node": "^22.13.10",
+    "@vitest/coverage-v8": "^3.1.1",
+    "eslint": "^9.23.0",
+    "jsdom": "^26.0.0",
+    "typescript": "5.8.2",
+    "vite": "^6.2.7",
+    "vite-plugin-dts": "^4.5.3",
+    "vite-tsconfig-paths": "^5.1.4",
+    "vitest": "^3.1.1"
+  },
+  "dependencies": {
+    "msw": "2.4.3"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "msw": {
+    "workerDirectory": [
+      "../../apps/web/public"
+    ]
+  }
+}

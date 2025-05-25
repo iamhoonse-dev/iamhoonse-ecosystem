@@ -1,0 +1,51 @@
+{
+  "name": "@repo/eslint-plugin-sample",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "version": "0.0.0",
+  "author": "iamhoonse-dev",
+  "license": "MIT",
+  "description": "This is a sample plugin.",
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "eslint-plugin"
+  ],
+  "homepage": "https://github.com/iamhoonse-dev/ecosystem-sample/tree/main/packages/eslint-plugin-sample",
+  "bugs": "https://github.com/iamhoonse-dev/ecosystem-sample/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iamhoonse-dev/ecosystem-sample.git",
+    "directory": "packages/eslint-plugin-sample"
+  },
+  "main": "./lib/index.js",
+  "exports": "./lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "lint": "eslint . --max-warnings 0",
+    "test": "mocha tests --recursive",
+    "update:eslint-docs": "eslint-doc-generator"
+  },
+  "dependencies": {
+    "requireindex": "^1.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^9.0.0",
+    "@eslint/js": "^9.0.0",
+    "eslint-doc-generator": "^2.0.0",
+    "eslint-plugin-eslint-plugin": "^6.0.0",
+    "eslint-plugin-n": "^17.0.0",
+    "mocha": "^11.0.0",
+    "npm-run-all2": "^6.1.2"
+  },
+  "engines": {
+    "node": "^18.18.0 || ^20.9.0 || >=21.1.0"
+  },
+  "peerDependencies": {
+    "eslint": ">=8.57.0"
+  }
+}

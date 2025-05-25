@@ -1,0 +1,59 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "ui": "tui",
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "inputs": ["$TURBO_DEFAULT$", ".env*", "!**/*.stories.{tsx,jsx,mdx}"],
+      "outputs": [".next/**", "!.next/cache/**", "dist/**", "storybook-static/**"]
+    },
+    "@repo/react-utils#build": {
+      "dependsOn": ["@repo/browser-utils#build"]
+    },
+    "build:storybook": {},
+    "lint": {
+      "dependsOn": ["build", "^lint"]
+    },
+    "check-types": {
+      "dependsOn": ["build", "^check-types"]
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "test": {
+      "dependsOn": ["^test", "@repo/vitest-config#build"],
+      "outputs": [
+        "coverage.json",
+        "apps/*/coverage.json",
+        "packages/*/coverage.json",
+        "configs/*/coverage.json",
+        "shared/*/coverage.json",
+        "tools/*/coverage.json"
+      ]
+    },
+    "test:watch": {
+      "cache": false,
+      "persistent": true
+    },
+    "test:storybook": {
+      "dependsOn": ["^test:storybook"]
+    },
+    "test:lighthouse": {
+      "dependsOn": ["^test:lighthouse"],
+      "outputs": [".lighthouseci/**"],
+      "passThroughEnv": ["WEB_BASE_URL", "LHCI_GITHUB_APP_TOKEN"]
+    },
+    "test:e2e": {
+      "dependsOn": ["^build"],
+      "passThroughEnv": ["PLAYWRIGHT_*"]
+    },
+    "test:e2e:ci": {
+      "passThroughEnv": ["PLAYWRIGHT_*"]
+    },
+    "transit": {
+      "dependsOn": ["^transit"]
+    }
+  },
+  "globalEnv": ["NODE_ENV", "CI", "NEXT_RUNTIME"]
+}
