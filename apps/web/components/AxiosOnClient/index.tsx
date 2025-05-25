@@ -1,7 +1,7 @@
 "use client";
 
 import { type FC, useEffect, useState } from "react";
-import { selfInstance } from "@repo/http-clients/instances";
+import { selfInstance } from "@iamhoonse-js/http-clients/instances";
 
 const AxiosOnClient: FC = () => {
   const [loading, setLoading] = useState(false);

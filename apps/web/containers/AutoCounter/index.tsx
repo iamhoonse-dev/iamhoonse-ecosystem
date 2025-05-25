@@ -1,7 +1,7 @@
 "use client";
 
 import { type FC, useReducer } from "react";
-import { useInterval } from "@repo/react-utils/hooks";
+import { useInterval } from "@iamhoonse-js/react-utils/hooks";
 
 const AutoCounter: FC = () => {
   const [counter, increase] = useReducer((state: number) => state + 1, 0);

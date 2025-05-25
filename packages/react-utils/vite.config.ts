@@ -5,7 +5,7 @@ import react from "@vitejs/plugin-react";
 import dtsPlugin from "vite-plugin-dts";
 import tsConfigPaths from "vite-tsconfig-paths";
 import { preserveDirective } from "rollup-preserve-directives";
-import { runWithGlob } from "@repo/helpers/runWithGlob";
+import { runWithGlob } from "@iamhoonse-js/helpers/runWithGlob";
 
 // https://vite.dev/config/
 export default defineConfig({

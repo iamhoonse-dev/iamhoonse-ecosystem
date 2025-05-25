@@ -1,5 +1,5 @@
 {
-  "name": "@repo/playwright-config",
+  "name": "@iamhoonse-js/playwright-config",
   "version": "0.0.0",
   "type": "module",
   "private": true,
@@ -11,8 +11,8 @@
     "check-types": "tsc --noEmit"
   },
   "devDependencies": {
-    "@repo/eslint-config": "workspace:*",
-    "@repo/typescript-config": "workspace:*",
+    "@iamhoonse-js/eslint-config": "workspace:*",
+    "@iamhoonse-js/typescript-config": "workspace:*",
     "@types/node": "^22.13.10",
     "eslint": "^9.23.0",
     "typescript": "^5.8.2",

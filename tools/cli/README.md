@@ -14,7 +14,7 @@
   - `-n, --name <value>`: 새로운 소유자 이름을 지정해요.
 - **[rename-repository](./src/rename-repository/index.ts)**: 코드베이스 내 모든 파일을 탐색하여 레포지토리 이름이 기록되어 있는 부분을 replace 해주는 CLI 도구에요.
   - `-n, --name <value>`: 새로운 레포지토리 이름을 지정해요.
-- **[rename-scope](./src/rename-scope/index.ts)**: 코드베이스 내 모든 파일을 탐색하여 기존의 패키지명 앞에 기록되어 있는 스코프 부분(e.g. `@repo/`)을 replace 해주는 CLI 도구에요.
+- **[rename-scope](./src/rename-scope/index.ts)**: 코드베이스 내 모든 파일을 탐색하여 기존의 패키지명 앞에 기록되어 있는 스코프 부분(e.g. `@iamhoonse-js/`)을 replace 해주는 CLI 도구에요.
   - `-n, --name <value>`: 새로운 스코프 이름을 지정해요.
 
 ## ⬇️ 설치

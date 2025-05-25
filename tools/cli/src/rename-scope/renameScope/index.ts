@@ -11,7 +11,7 @@ export default function renameScope(name: string) {
   const rootDir = path.resolve(__dirname, "../../../../../"); // Adjust based on project structure
 
   // current scope name
-  const oldScope = "@repo/";
+  const oldScope = "@iamhoonse-js/";
 
   // new scope name
   const targetScope = `@${name}/`;

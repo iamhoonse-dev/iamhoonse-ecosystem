@@ -18,7 +18,7 @@ importers:
       '@commitlint/config-conventional':
         specifier: ^19.8.0
         version: 19.8.0
-      '@repo/cli':
+      '@iamhoonse-js/cli':
         specifier: workspace:*
         version: link:tools/cli
       husky:
@@ -36,7 +36,7 @@ importers:
 
   apps/docs:
     dependencies:
-      '@repo/ui':
+      '@iamhoonse-js/ui':
         specifier: workspace:*
         version: link:../../packages/ui
       next:
@@ -49,10 +49,10 @@ importers:
         specifier: ^19.0.0
         version: 19.0.0(react@19.0.0)
     devDependencies:
-      '@repo/eslint-config':
+      '@iamhoonse-js/eslint-config':
         specifier: workspace:*
         version: link:../../configs/eslint-config
-      '@repo/typescript-config':
+      '@iamhoonse-js/typescript-config':
         specifier: workspace:*
         version: link:../../configs/typescript-config
       '@types/node':
@@ -73,7 +73,7 @@ importers:
 
   apps/frontend-workshop:
     dependencies:
-      '@repo/react-ui':
+      '@iamhoonse-js/react-ui':
         specifier: workspace:*
         version: link:../../packages/react-ui
       react:
@@ -89,7 +89,7 @@ importers:
       '@eslint/js':
         specifier: ^9.21.0
         version: 9.23.0
-      '@repo/eslint-config':
+      '@iamhoonse-js/eslint-config':
         specifier: workspace:*
         version: link:../../configs/eslint-config
       '@storybook/addon-a11y':
@@ -170,22 +170,22 @@ importers:
 
   apps/web:
     dependencies:
-      '@repo/browser-utils':
+      '@iamhoonse-js/browser-utils':
         specifier: workspace:*
         version: link:../../packages/browser-utils
-      '@repo/http-clients':
+      '@iamhoonse-js/http-clients':
         specifier: workspace:*
         version: link:../../packages/http-clients
-      '@repo/node-utils':
+      '@iamhoonse-js/node-utils':
         specifier: workspace:*
         version: link:../../packages/node-utils
-      '@repo/react-ui':
+      '@iamhoonse-js/react-ui':
         specifier: workspace:*
         version: link:../../packages/react-ui
-      '@repo/react-utils':
+      '@iamhoonse-js/react-utils':
         specifier: workspace:*
         version: link:../../packages/react-utils
-      '@repo/ui':
+      '@iamhoonse-js/ui':
         specifier: workspace:*
         version: link:../../packages/ui
       next:
@@ -198,13 +198,13 @@ importers:
         specifier: ^19.0.0
         version: 19.0.0(react@19.0.0)
     devDependencies:
-      '@repo/eslint-config':
+      '@iamhoonse-js/eslint-config':
         specifier: workspace:*
         version: link:../../configs/eslint-config
-      '@repo/typescript-config':
+      '@iamhoonse-js/typescript-config':
         specifier: workspace:*
         version: link:../../configs/typescript-config
-      '@repo/vitest-config':
+      '@iamhoonse-js/vitest-config':
         specifier: workspace:*
         version: link:../../configs/vitest-config
       '@testing-library/dom':
@@ -258,7 +258,7 @@ importers:
       '@next/eslint-plugin-next':
         specifier: ^15.2.1
         version: 15.2.1
-      '@repo/eslint-plugin-sample':
+      '@iamhoonse-js/eslint-plugin-sample':
         specifier: workspace:*
         version: link:../../packages/eslint-plugin-sample
       eslint:
@@ -294,10 +294,10 @@ importers:
       '@playwright/test':
         specifier: ^1.51.1
         version: 1.51.1
-      '@repo/eslint-config':
+      '@iamhoonse-js/eslint-config':
         specifier: workspace:*
         version: link:../eslint-config
-      '@repo/typescript-config':
+      '@iamhoonse-js/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
       '@types/node':
@@ -317,7 +317,7 @@ importers:
 
   configs/vitest-config:
     devDependencies:
-      '@repo/typescript-config':
+      '@iamhoonse-js/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
       '@vitest/coverage-v8':
@@ -345,16 +345,16 @@ importers:
         specifier: 2.4.3
         version: 2.4.3(typescript@5.8.2)
     devDependencies:
-      '@repo/eslint-config':
+      '@iamhoonse-js/eslint-config':
         specifier: workspace:*
         version: link:../../configs/eslint-config
-      '@repo/helpers':
+      '@iamhoonse-js/helpers':
         specifier: workspace:*
         version: link:../../shared/helpers
-      '@repo/typescript-config':
+      '@iamhoonse-js/typescript-config':
         specifier: workspace:*
         version: link:../../configs/typescript-config
-      '@repo/vitest-config':
+      '@iamhoonse-js/vitest-config':
         specifier: workspace:*
         version: link:../../configs/vitest-config
       '@testing-library/dom':
@@ -431,13 +431,13 @@ importers:
         specifier: 2.4.3
         version: 2.4.3(typescript@5.8.2)
     devDependencies:
-      '@repo/eslint-config':
+      '@iamhoonse-js/eslint-config':
         specifier: workspace:*
         version: link:../../configs/eslint-config
-      '@repo/helpers':
+      '@iamhoonse-js/helpers':
         specifier: workspace:*
         version: link:../../shared/helpers
-      '@repo/typescript-config':
+      '@iamhoonse-js/typescript-config':
         specifier: workspace:*
         version: link:../../configs/typescript-config
       '@types/node':
@@ -465,16 +465,16 @@ importers:
         specifier: 2.4.3
         version: 2.4.3(typescript@5.8.2)
     devDependencies:
-      '@repo/eslint-config':
+      '@iamhoonse-js/eslint-config':
         specifier: workspace:*
         version: link:../../configs/eslint-config
-      '@repo/helpers':
+      '@iamhoonse-js/helpers':
         specifier: workspace:*
         version: link:../../shared/helpers
-      '@repo/typescript-config':
+      '@iamhoonse-js/typescript-config':
         specifier: workspace:*
         version: link:../../configs/typescript-config
-      '@repo/vitest-config':
+      '@iamhoonse-js/vitest-config':
         specifier: workspace:*
         version: link:../../configs/vitest-config
       '@types/node':
@@ -529,16 +529,16 @@ importers:
         specifier: ^1.2.5
         version: 1.2.5
     devDependencies:
-      '@repo/eslint-config':
+      '@iamhoonse-js/eslint-config':
         specifier: workspace:*
         version: link:../../configs/eslint-config
-      '@repo/helpers':
+      '@iamhoonse-js/helpers':
         specifier: workspace:*
         version: link:../../shared/helpers
-      '@repo/typescript-config':
+      '@iamhoonse-js/typescript-config':
         specifier: workspace:*
         version: link:../../configs/typescript-config
-      '@repo/vitest-config':
+      '@iamhoonse-js/vitest-config':
         specifier: workspace:*
         version: link:../../configs/vitest-config
       '@storybook/react':
@@ -607,20 +607,20 @@ importers:
 
   packages/react-utils:
     dependencies:
-      '@repo/browser-utils':
+      '@iamhoonse-js/browser-utils':
         specifier: workspace:*
         version: link:../browser-utils
     devDependencies:
-      '@repo/eslint-config':
+      '@iamhoonse-js/eslint-config':
         specifier: workspace:*
         version: link:../../configs/eslint-config
-      '@repo/helpers':
+      '@iamhoonse-js/helpers':
         specifier: workspace:*
         version: link:../../shared/helpers
-      '@repo/typescript-config':
+      '@iamhoonse-js/typescript-config':
         specifier: workspace:*
         version: link:../../configs/typescript-config
-      '@repo/vitest-config':
+      '@iamhoonse-js/vitest-config':
         specifier: workspace:*
         version: link:../../configs/vitest-config
       '@testing-library/dom':
@@ -696,10 +696,10 @@ importers:
         specifier: ^19.0.0
         version: 19.0.0(react@19.0.0)
     devDependencies:
-      '@repo/eslint-config':
+      '@iamhoonse-js/eslint-config':
         specifier: workspace:*
         version: link:../../configs/eslint-config
-      '@repo/typescript-config':
+      '@iamhoonse-js/typescript-config':
         specifier: workspace:*
         version: link:../../configs/typescript-config
       '@turbo/gen':
@@ -727,10 +727,10 @@ importers:
         specifier: ^11.0.1
         version: 11.0.1
     devDependencies:
-      '@repo/eslint-config':
+      '@iamhoonse-js/eslint-config':
         specifier: workspace:*
         version: link:../../configs/eslint-config
-      '@repo/typescript-config':
+      '@iamhoonse-js/typescript-config':
         specifier: workspace:*
         version: link:../../configs/typescript-config
       '@types/node':
@@ -761,13 +761,13 @@ importers:
         specifier: ^8.2.0
         version: 8.2.0
     devDependencies:
-      '@repo/eslint-config':
+      '@iamhoonse-js/eslint-config':
         specifier: workspace:*
         version: link:../../configs/eslint-config
-      '@repo/typescript-config':
+      '@iamhoonse-js/typescript-config':
         specifier: workspace:*
         version: link:../../configs/typescript-config
-      '@repo/vitest-config':
+      '@iamhoonse-js/vitest-config':
         specifier: workspace:*
         version: link:../../configs/vitest-config
       '@types/figlet':
@@ -795,7 +795,7 @@ importers:
         specifier: ^0.14.0
         version: 0.14.0
     devDependencies:
-      '@repo/eslint-config':
+      '@iamhoonse-js/eslint-config':
         specifier: workspace:*
         version: link:../../configs/eslint-config
       eslint:
@@ -808,13 +808,13 @@ importers:
         specifier: ^1.51.1
         version: 1.51.1
     devDependencies:
-      '@repo/eslint-config':
+      '@iamhoonse-js/eslint-config':
         specifier: workspace:*
         version: link:../../configs/eslint-config
-      '@repo/playwright-config':
+      '@iamhoonse-js/playwright-config':
         specifier: workspace:*
         version: link:../../configs/playwright-config
-      '@repo/typescript-config':
+      '@iamhoonse-js/typescript-config':
         specifier: workspace:*
         version: link:../../configs/typescript-config
       '@types/node':

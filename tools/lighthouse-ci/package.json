@@ -7,7 +7,7 @@
     "test:lighthouse": "lhci autorun"
   },
   "devDependencies": {
-    "@repo/eslint-config": "workspace:*",
+    "@iamhoonse-js/eslint-config": "workspace:*",
     "eslint": "^9.23.0"
   },
   "dependencies": {

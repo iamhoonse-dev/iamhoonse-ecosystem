@@ -2,7 +2,7 @@ import { defineConfig } from "vite";
 import { resolve } from "path";
 import dtsPlugin from "vite-plugin-dts";
 import tsConfigPaths from "vite-tsconfig-paths";
-import { runWithGlob } from "@repo/helpers/runWithGlob";
+import { runWithGlob } from "@iamhoonse-js/helpers/runWithGlob";
 
 // https://vitejs.dev/config/
 export default defineConfig({

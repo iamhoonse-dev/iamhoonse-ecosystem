@@ -1,9 +1,9 @@
 {
-  "extends": ["@repo/typescript-config/base.json"],
+  "extends": ["@iamhoonse-js/typescript-config/base.json"],
   "compilerOptions": {
     "outDir": "dist",
     "paths": {
-      "@repo/vitest-config/*": ["./configs/*.ts"]
+      "@iamhoonse-js/vitest-config/*": ["./configs/*.ts"]
     }
   },
   "include": ["configs",

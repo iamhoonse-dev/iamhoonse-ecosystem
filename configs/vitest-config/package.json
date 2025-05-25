@@ -1,5 +1,5 @@
 {
-  "name": "@repo/vitest-config",
+  "name": "@iamhoonse-js/vitest-config",
   "version": "0.0.0",
   "type": "module",
   "private": true,
@@ -28,7 +28,7 @@
     "view-report": "open coverage/report/index.html"
   },
   "devDependencies": {
-    "@repo/typescript-config": "workspace:*",
+    "@iamhoonse-js/typescript-config": "workspace:*",
     "@vitest/coverage-v8": "^3.1.1",
     "@vitest/ui": "^3.1.1",
     "glob": "^11.0.1",

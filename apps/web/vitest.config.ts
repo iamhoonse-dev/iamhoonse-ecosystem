@@ -1,7 +1,7 @@
 import { mergeConfig, defineProject, defineConfig } from "vitest/config";
 import react from "@vitejs/plugin-react";
 import tsconfigPaths from "vite-tsconfig-paths";
-import uiTestConfig from "@repo/vitest-config/ui";
+import uiTestConfig from "@iamhoonse-js/vitest-config/ui";
 
 export default mergeConfig(
   mergeConfig(

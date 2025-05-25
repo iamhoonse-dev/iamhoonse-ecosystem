@@ -37,7 +37,7 @@ pnpm install
 ```typescript
 import { mergeConfig } from "vite";
 import { defineProject } from "vitest/config";
-import baseConfig from "@repo/vitest-config/base";
+import baseConfig from "@iamhoonse-js/vitest-config/base";
 import projectViteConfig from "./vite.config";
 
 export default mergeConfig(

@@ -1,5 +1,5 @@
 {
-  "name": "@repo/react-utils",
+  "name": "@iamhoonse-js/react-utils",
   "private": false,
   "publishConfig": {
     "access": "public"
@@ -58,13 +58,13 @@
     "react-dom": "^19.0.0"
   },
   "dependencies": {
-    "@repo/browser-utils": "workspace:*"
+    "@iamhoonse-js/browser-utils": "workspace:*"
   },
   "devDependencies": {
-    "@repo/eslint-config": "workspace:*",
-    "@repo/helpers": "workspace:*",
-    "@repo/typescript-config": "workspace:*",
-    "@repo/vitest-config": "workspace:*",
+    "@iamhoonse-js/eslint-config": "workspace:*",
+    "@iamhoonse-js/helpers": "workspace:*",
+    "@iamhoonse-js/typescript-config": "workspace:*",
+    "@iamhoonse-js/vitest-config": "workspace:*",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.3.0",
