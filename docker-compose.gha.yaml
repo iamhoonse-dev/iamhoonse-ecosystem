@@ -71,6 +71,7 @@ services:
       - test_network
     depends_on:
       - web
+      - portfolio
     environment:
       CI: true
       WEB_BASE_URL: http://web:3000
