@@ -48,10 +48,12 @@ export default function Home() {
           </li>
           <li>Save and see your changes instantly.</li>
           <li>
-            isEmptyString : {JSON.stringify(isEmptyString("  \t    \n  "))}
+            isEmptyString(&#34; \t \n &#34;) :{" "}
+            {JSON.stringify(isEmptyString("  \t    \n  "))}
           </li>
           <li>
-            isEmptyString : {JSON.stringify(isEmptyString("  \t  t  \n  "))}
+            isEmptyString(&#34; \t t \n &#34;) :{" "}
+            {JSON.stringify(isEmptyString("  \t  t  \n  "))}
           </li>
           <li>
             <HelloWorldButton />
