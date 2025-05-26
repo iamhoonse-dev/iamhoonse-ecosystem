@@ -23,6 +23,20 @@ services:
     networks:
       - test_network
 
+
+  # The portfolio service is built from the Dockerfile located in the ./apps/portfolio directory
+  portfolio:
+    image: ghcr.io/${REPOSITORY_OWNER}/${REPOSITORY_NAME}/portfolio:cache
+    build:
+      context: .
+      dockerfile: ./apps/portfolio/Dockerfile
+      cache_from:
+        - type=registry,ref=ghcr.io/${REPOSITORY_OWNER}/${REPOSITORY_NAME}/portfolio:cache
+      cache_to:
+        - type=registry,ref=ghcr.io/${REPOSITORY_OWNER}/${REPOSITORY_NAME}/portfolio:cache,mode=max
+    networks:
+      - test_network
+
   # The Playwright service is built from the Dockerfile located in the ./tools/playwright directory
   playwright-web:
     image: ghcr.io/${REPOSITORY_OWNER}/${REPOSITORY_NAME}/playwright-web:cache
@@ -37,6 +51,7 @@ services:
       - test_network
     depends_on:
       - web
+      - portfolio
     environment:
       CI: true
 
@@ -54,9 +69,11 @@ services:
       - test_network
     depends_on:
       - web
+      - portfolio
     environment:
       CI: true
       WEB_BASE_URL: http://web:3000
+      PORTFOLIO_BASE_URL: http://portfolio:3000
       LHCI_GITHUB_APP_TOKEN: ${LHCI_GITHUB_APP_TOKEN}
 
   # The frontend-workshop service is built from the Dockerfile located in the ./apps/frontend-workshop directory

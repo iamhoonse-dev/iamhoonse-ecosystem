@@ -1,0 +1,49 @@
+{
+  "name": "portfolio",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack --port 3002",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint --max-warnings 0",
+    "check-types": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "coverage": "vitest run --coverage"
+  },
+  "dependencies": {
+    "@iamhoonse-js/browser-utils": "workspace:*",
+    "@iamhoonse-js/http-clients": "workspace:*",
+    "@iamhoonse-js/node-utils": "workspace:*",
+    "@iamhoonse-js/react-ui": "workspace:*",
+    "@iamhoonse-js/react-utils": "workspace:*",
+    "@iamhoonse-js/ui": "workspace:*",
+    "next": "^15.2.4",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@iamhoonse-js/eslint-config": "workspace:*",
+    "@iamhoonse-js/typescript-config": "workspace:*",
+    "@iamhoonse-js/vitest-config": "workspace:*",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/node": "^22.13.10",
+    "@types/react": "19.0.10",
+    "@types/react-dom": "19.0.4",
+    "@vitejs/plugin-react": "^4.3.4",
+    "@vitest/coverage-v8": "^3.1.1",
+    "eslint": "^9.23.0",
+    "jsdom": "^26.0.0",
+    "typescript": "5.8.2",
+    "vite-tsconfig-paths": "^5.1.4",
+    "vitest": "^3.1.1"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

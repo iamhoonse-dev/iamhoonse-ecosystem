@@ -168,10 +168,10 @@ jobs:
           docker network inspect "test_network" >/dev/null 2>&1 || docker network create "test_network"
       - name: Build Lighthouse images
         run: |
-          docker compose -f docker-compose.gha.converted.yaml build web lighthouse-runner
+          docker compose -f docker-compose.gha.converted.yaml build web portfolio lighthouse-runner
       - name: Run Lighthouse tests
         run: |
-          docker compose -f docker-compose.gha.converted.yaml up web lighthouse-runner --exit-code-from lighthouse-runner
+          docker compose -f docker-compose.gha.converted.yaml up web portfolio lighthouse-runner --exit-code-from lighthouse-runner
 
   e2e-web:
     needs: set-docker-compose
@@ -201,10 +201,10 @@ jobs:
           docker network inspect "test_network" >/dev/null 2>&1 || docker network create "test_network"
       - name: Build E2E images
         run: |
-          docker compose -f docker-compose.gha.converted.yaml build web playwright-web
+          docker compose -f docker-compose.gha.converted.yaml build web portfolio playwright-web
       - name: Run E2E tests for web
         run: |
-          docker compose -f docker-compose.gha.converted.yaml up web playwright-web --exit-code-from playwright-web
+          docker compose -f docker-compose.gha.converted.yaml up web portfolio playwright-web --exit-code-from playwright-web
       - name: Copy E2E report from container
         run: |
           CONTAINER_ID=$(docker ps -aqf "name=iamhoonse-ecosystem-playwright-web")

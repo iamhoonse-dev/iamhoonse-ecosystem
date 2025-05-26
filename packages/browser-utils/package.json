@@ -77,7 +77,8 @@
   },
   "msw": {
     "workerDirectory": [
-      "../../apps/web/public"
+      "../../apps/web/public",
+      "../../apps/portfolio/public"
     ]
   }
 }
