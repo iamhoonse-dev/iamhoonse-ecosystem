@@ -24,6 +24,7 @@ services:
     environment:
       CI: true
       WEB_BASE_URL: http://web:3000
+      PORTFOLIO_BASE_URL: http://portfolio:3002
       LHCI_GITHUB_APP_TOKEN: ${LHCI_GITHUB_APP_TOKEN}
 
 # Define a network, which allows containers to communicate

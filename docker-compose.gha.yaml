@@ -74,6 +74,7 @@ services:
     environment:
       CI: true
       WEB_BASE_URL: http://web:3000
+      PORTFOLIO_BASE_URL: http://portfolio:3002
       LHCI_GITHUB_APP_TOKEN: ${LHCI_GITHUB_APP_TOKEN}
 
   # The frontend-workshop service is built from the Dockerfile located in the ./apps/frontend-workshop directory
