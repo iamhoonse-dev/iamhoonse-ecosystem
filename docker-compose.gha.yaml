@@ -34,8 +34,6 @@ services:
         - type=registry,ref=ghcr.io/${REPOSITORY_OWNER}/${REPOSITORY_NAME}/portfolio:cache
       cache_to:
         - type=registry,ref=ghcr.io/${REPOSITORY_OWNER}/${REPOSITORY_NAME}/portfolio:cache,mode=max
-    ports:
-      - 3002:3000
     networks:
       - test_network
 
@@ -75,7 +73,7 @@ services:
     environment:
       CI: true
       WEB_BASE_URL: http://web:3000
-      PORTFOLIO_BASE_URL: http://portfolio:3002
+      PORTFOLIO_BASE_URL: http://portfolio:3000
       LHCI_GITHUB_APP_TOKEN: ${LHCI_GITHUB_APP_TOKEN}
 
   # The frontend-workshop service is built from the Dockerfile located in the ./apps/frontend-workshop directory
