@@ -35,7 +35,7 @@ services:
       cache_to:
         - type=registry,ref=ghcr.io/${REPOSITORY_OWNER}/${REPOSITORY_NAME}/portfolio:cache,mode=max
     ports:
-      - 3000:3000
+      - 3002:3002
     networks:
       - test_network
 
