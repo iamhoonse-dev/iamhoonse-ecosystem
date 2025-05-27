@@ -27,6 +27,8 @@ const fileName: Exclude<LibraryOptions["fileName"], string> = (
       return `components/index.${format}.js`;
     case "styles":
       return `styles/index.${format}.js`;
+    case "constants":
+      return `constants/index.${format}.js`;
     default:
       return `${entryName}/index.${format}.js`;
   }
