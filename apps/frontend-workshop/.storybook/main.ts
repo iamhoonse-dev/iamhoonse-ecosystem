@@ -14,6 +14,7 @@ const config: StorybookConfig = {
     "../src/**/*.mdx",
     "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)",
     "../../../packages/react-ui/src/**/*.stories.@(js|jsx|mjs|ts|tsx)",
+    "../../../apps/portfolio/**/*.stories.@(js|jsx|mjs|ts|tsx)",
   ],
   addons: [
     getAbsolutePath("@storybook/addon-essentials"),
