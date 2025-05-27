@@ -14,6 +14,9 @@ type Story = StoryObj<typeof meta>;
  * 전체 너비의 헤더 컴포넌트입니다.
  */
 export const Default: Story = {
+  parameters: {
+    viewport: { defaultViewport: "responsive" },
+  },
   args: {},
 };
 
@@ -52,7 +55,7 @@ export const Large: Story = {
  */
 export const XLarge: Story = {
   parameters: {
-    viewport: { defaultViewport: "tailwindExtraLarge" },
+    viewport: { defaultViewport: "tailwindXLarge" },
   },
   args: {},
 };
@@ -62,7 +65,7 @@ export const XLarge: Story = {
  */
 export const XXLarge: Story = {
   parameters: {
-    viewport: { defaultViewport: "tailwindSmall" },
+    viewport: { defaultViewport: "tailwindXXLarge" },
   },
   args: {},
 };
