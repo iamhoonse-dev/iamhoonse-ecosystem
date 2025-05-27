@@ -74,7 +74,7 @@
     "@iamhoonse-js/helpers": "workspace:*",
     "@iamhoonse-js/typescript-config": "workspace:*",
     "@iamhoonse-js/vitest-config": "workspace:*",
-    "@storybook/react": "^8.6.11",
+    "@storybook/react": "^8.6.12",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.3.0",
