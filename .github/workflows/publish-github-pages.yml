@@ -5,7 +5,7 @@ on:
   push:
     # Runs on pushes targeting the default branch
     branches:
-      - '*' # fixme: for testing purposes, change to 'main' or your default branch
+      - main
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
