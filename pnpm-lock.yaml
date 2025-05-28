@@ -148,9 +148,6 @@ importers:
       '@iamhoonse-js/react-utils':
         specifier: workspace:*
         version: link:../../packages/react-utils
-      '@iamhoonse-js/ui':
-        specifier: workspace:*
-        version: link:../../packages/ui
       next:
         specifier: ^15.2.4
         version: 15.2.4(@babel/core@7.26.10)(@playwright/test@1.51.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -233,9 +230,6 @@ importers:
       '@iamhoonse-js/react-utils':
         specifier: workspace:*
         version: link:../../packages/react-utils
-      '@iamhoonse-js/ui':
-        specifier: workspace:*
-        version: link:../../packages/ui
       next:
         specifier: ^15.2.4
         version: 15.2.4(@babel/core@7.26.10)(@playwright/test@1.51.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
