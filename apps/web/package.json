@@ -19,7 +19,6 @@
     "@iamhoonse-js/node-utils": "workspace:*",
     "@iamhoonse-js/react-ui": "workspace:*",
     "@iamhoonse-js/react-utils": "workspace:*",
-    "@iamhoonse-js/ui": "workspace:*",
     "next": "^15.2.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
