@@ -80,7 +80,9 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Build docs app
-        run: pnpm run build --filter=docs
+        run: |
+          pnpm run build --filter=docs
+          ls -ahl ./apps/docs/out
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
