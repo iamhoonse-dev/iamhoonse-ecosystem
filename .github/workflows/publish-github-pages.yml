@@ -81,6 +81,11 @@ jobs:
 
       - name: Build docs app
         run: pnpm run build --filter=docs
+        env:
+          GISCUS_REPO: ${{ github.repository }}
+          GISCUS_REPO_ID: ${{ github.repository_id }}
+          GISCUS_DISCUSSION_CATEGORY: ${{ variables.GISCUS_DISCUSSION_CATEGORY }}
+          GISCUS_DISCUSSION_CATEGORY_ID: ${{ secrets.GISCUS_DISCUSSION_CATEGORY_ID }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
