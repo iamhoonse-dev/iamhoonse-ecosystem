@@ -136,20 +136,14 @@ Happy Hacking!
 이 섹션은 재사용 가능한 패키지 모음을 포함하고 있어요. 각 패키지는 특정 기능을 제공하며, 모노레포 구조에서 독립적으로 관리돼요.
 또한, 이곳에 있는 패키지들 중 일부는 [npm](https://npmjs.org)에 배포될 수 있도록 설정되어 있어요.
 
-- **[Browser Utils](./packages/browser-utils)**: 브라우저 관련 유틸리티 함수 모음이에요.
-  - 🟢 [npm](https://npmjs.org) 에 배포되도록 설정되어 있어요.
-- **[ESLint Plugin Sample](./packages/eslint-plugin-sample)**: 샘플 ESLint 플러그인이에요.
-  - 🟢 [npm](https://npmjs.org) 에 배포되도록 설정되어 있어요.
-- **[HTTP Clients](./packages/http-clients)**: HTTP 요청을 처리하려고 만든 클라이언트 라이브러리예요.
-  - 🛑 [npm](https://npmjs.org) 에 배포되지 않도록 설정되어 있어요.
-- **[Node Utils](./packages/node-utils)**: Node.js 환경에서 쓸 수 있는 유틸리티 함수 모음이에요.
-  - 🟢 [npm](https://npmjs.org) 에 배포되도록 설정되어 있어요.
-- **[React UI](./packages/react-ui)**: React 기반 UI 컴포넌트 라이브러리예요.
-  - 🟢 [npm](https://npmjs.org) 에 배포되도록 설정되어 있어요.
-- **[React Utils](./packages/react-utils)**: React 애플리케이션에서 쓸 수 있는 유틸리티 함수 모음이에요.
-  - 🟢 [npm](https://npmjs.org) 에 배포되도록 설정되어 있어요.
-- **[UI](./packages/ui)**: 공통 UI 컴포넌트랑 스타일이에요.
-  - 🛑 [npm](https://npmjs.org) 에 배포되지 않도록 설정되어 있어요.
+| 이름                                                        | 배포 버전                                                                           | 설명                                                        |
+| ----------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------- |
+| **[Browser Utils](./packages/browser-utils)**               | ![NPM Version](https://img.shields.io/npm/v/%40iamhoonse-js%2Fbrowser-utils)        | 브라우저 관련 유틸리티 함수 모음이에요.                     |
+| **[ESLint Plugin Sample](./packages/eslint-plugin-sample)** | ![NPM Version](https://img.shields.io/npm/v/%40iamhoonse-js%2Feslint-plugin-sample) | 샘플 ESLint 플러그인이에요.                                 |
+| **[HTTP Clients](./packages/http-clients)**                 |                                                                                     | HTTP 요청을 처리하려고 만든 클라이언트 라이브러리예요.      |
+| **[Node Utils](./packages/node-utils)**                     | ![NPM Version](https://img.shields.io/npm/v/%40iamhoonse-js%2Fnode-utils)           | Node.js 환경에서 쓸 수 있는 유틸리티 함수 모음이에요.       |
+| **[React UI](./packages/react-ui)**                         | ![NPM Version](https://img.shields.io/npm/v/%40iamhoonse-js%2Freact-ui)             | React 기반 UI 컴포넌트 라이브러리예요.                      |
+| **[React Utils](./packages/react-utils)**                   | ![NPM Version](https://img.shields.io/npm/v/%40iamhoonse-js%2Freact-utils)          | React 애플리케이션에서 쓸 수 있는 유틸리티 함수 모음이에요. |
 
 ### 🧩 Shared
 
