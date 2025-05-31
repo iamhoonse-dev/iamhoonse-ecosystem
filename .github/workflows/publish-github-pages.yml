@@ -84,7 +84,7 @@ jobs:
         env:
           GISCUS_REPO: ${{ github.repository }}
           GISCUS_REPO_ID: ${{ github.repository_id }}
-          GISCUS_DISCUSSION_CATEGORY: ${{ variables.GISCUS_DISCUSSION_CATEGORY }}
+          GISCUS_DISCUSSION_CATEGORY: ${{ vars.GISCUS_DISCUSSION_CATEGORY }}
           GISCUS_DISCUSSION_CATEGORY_ID: ${{ secrets.GISCUS_DISCUSSION_CATEGORY_ID }}
 
       - name: Upload artifact
