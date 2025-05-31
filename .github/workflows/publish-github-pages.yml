@@ -83,7 +83,7 @@ jobs:
         run: pnpm run build --filter=docs
         env:
           GISCUS_REPO: ${{ github.repository }}
-          GISCUS_REPO_ID: ${{ github.repository_id }}
+          GISCUS_REPO_ID: ${{ secrets.GISCUS_REPO_ID }}
           GISCUS_DISCUSSION_CATEGORY: ${{ vars.GISCUS_DISCUSSION_CATEGORY }}
           GISCUS_DISCUSSION_CATEGORY_ID: ${{ secrets.GISCUS_DISCUSSION_CATEGORY_ID }}
 
