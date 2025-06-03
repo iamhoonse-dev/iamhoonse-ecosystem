@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import type { ComponentProps, ReactNode } from "react";
 import { Footer, Layout, Navbar } from "nextra-theme-docs";
 import { Banner, Head } from "nextra/components";
 import { getPageMap } from "nextra/page-map";
@@ -33,6 +33,33 @@ const navbar = (
 
 // eslint-disable-next-line sample/no-new-date
 const footer = <Footer>MIT {new Date().getFullYear()} © Nextra.</Footer>;
+
+/**
+ * getLabelFromLocale is a utility function that returns a localized label for a given locale string.
+ *
+ * @param locale = The locale string (e.g., "en", "ko", "ja").
+ */
+function getLabelFromLocale(locale: string) {
+  switch (locale) {
+    case "en":
+      return "🇺🇸English";
+    case "ko":
+      return "🇰🇷한국어";
+    case "ja":
+      return "🇯🇵日本語";
+    default:
+      return locale.toUpperCase();
+  }
+}
+
+/**
+ * i18nDropdownMenu is used to generate a dropdown menu for language selection in the Nextra layout.
+ */
+const i18nDropdownMenu: ComponentProps<typeof Layout>["i18n"] =
+  nextConfig.i18n?.locales.map((locale) => ({
+    locale,
+    name: getLabelFromLocale(locale),
+  }));
 
 /**
  * LocaleRouteParams is a type that represents the route parameters for the locale.
@@ -82,6 +109,7 @@ export default async function RootLayout({ children, params }: Props) {
           docsRepositoryBase="https://github.com/shuding/nextra/tree/main/docs"
           footer={footer}
           // ... Your additional layout options
+          i18n={i18nDropdownMenu}
         >
           {children}
         </Layout>
