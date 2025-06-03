@@ -6,7 +6,8 @@
 
 ## 📖 개요
 
-`iamhoonse-ecosystem`은 모노레포 관리랑 빌드를 단순화하려고 만든 템플릿이에요. 이 템플릿은 다양한 앱과 패키지를 포함하고 있어서, 팀 협업과 생산성을 높이는 데 도움을 줄 거예요.
+`iamhoonse-ecosystem`은 저의 개인 포트폴리오, 문서 사이트, 패키지 등을 배포하는 동시에,
+본인 소유의 작업물을 공개함으로써 다른 사람들이 자유롭게 코드를 참고하거나 사용할 수 있도록 만든 모노레포 프로젝트에요.
 
 ## 📖 상세 내용
 
@@ -159,6 +160,14 @@ graph TD
 - 이 Workflow는 Changesets 봇을 사용해서 PR을 생성하고, 변경 사항을 자동으로 추적해요.
 - PR을 승인하면, 변경된 패키지의 버전이 업데이트되고, `CHANGELOG.md` 파일이 생성돼요.
 - 그리고 승인된 PR이 병합되면서 실행되는 Workflow에 의해, `NPM_TOKEN`을 사용하여 npm에 패키지가 배포돼요.
+
+### 📖 [Publish GitHub Pages](.github/workflows/publish-github-pages.yml)
+
+[`publish-github-pages.yml`](.github/workflows/publish-github-pages.yml) 파일에 정의되어 있으며, [`docs`](./apps/docs) 앱을 GitHub Pages에 배포해요.
+
+- 이 Workflow는 `docs` 앱의 빌드를 수행하고, 빌드된 결과물을 GitHub Pages에 배포해요.
+- GitHub Pages 로의 배포를 위해서는 레포지토리의 Settings 에서 Pages를 활성화해야 해요.
+- 배포된 문서는 [https://<USER_ID>.github.io/<PROJECT_NAME>](https://iamhoonse-dev.github.io/turborepo-template/) 형식의 URL로 접근할 수 있어요.
 
 ## 📜 라이선스
 
