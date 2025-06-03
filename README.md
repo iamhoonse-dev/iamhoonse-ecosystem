@@ -197,10 +197,6 @@ npx turbo login
 npx turbo link
 ```
 
-## 🤝 기여
-
-이 템플릿에 기여하려면, [CONTRIBUTING.md](./CONTRIBUTING.md)를 참고해 주세요.
-
 ## 📜 라이선스
 
 이 프로젝트는 MIT 라이선스 하에 배포돼요.
