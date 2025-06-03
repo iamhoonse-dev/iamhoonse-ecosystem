@@ -16,7 +16,13 @@ export const nextConfig = {
   // disable the default Next.js image optimization to avoid issues with GitHub Pages
   images: {
     unoptimized: true,
-  }
+  },
+
+  // Set the locale configuration for internationalization
+  i18n: {
+    locales: ["en", "ko", "ja"],
+    defaultLocale: "ko",
+  },
 };
 
 /**
