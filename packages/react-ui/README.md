@@ -97,10 +97,6 @@ const preview: Preview = {
 export default preview;
 ```
 
-## 🤝 기여
-
-이 패키지에 기여하려면, [CONTRIBUTING.md](../../CONTRIBUTING.md)를 참조해 주세요.
-
 ## 📜 라이선스
 
 이 프로젝트는 MIT 라이선스 하에 배포돼요.

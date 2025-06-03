@@ -43,10 +43,6 @@ pnpm run dev
 
 [http://localhost:6006](http://localhost:6006)에서 Storybook을 확인할 수 있어요.
 
-## 🤝 기여
-
-이 애플리케이션에 기여하려면, [CONTRIBUTING.md](../../CONTRIBUTING.md)를 참조해 주세요.
-
 ## 📜 라이선스
 
 이 프로젝트는 MIT 라이선스 하에 배포돼요.
