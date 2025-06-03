@@ -109,7 +109,7 @@ export default async function RootLayout({ children, params }: Props) {
           banner={banner}
           navbar={navbar}
           pageMap={pageMapLocale}
-          docsRepositoryBase="https://github.com/shuding/nextra/tree/main/docs"
+          docsRepositoryBase="https://github.com/iamhoonse-dev/iamhoonse-ecosystem/tree/main/apps/docs"
           footer={footer}
           // ... Your additional layout options
           i18n={i18nDropdownMenu}
