@@ -156,47 +156,6 @@ graph TD
 - PR을 승인하면, 변경된 패키지의 버전이 업데이트되고, `CHANGELOG.md` 파일이 생성돼요.
 - 그리고 승인된 PR이 병합되면서 실행되는 Workflow에 의해, `NPM_TOKEN`을 사용하여 npm에 패키지가 배포돼요.
 
-## ⬇️ 의존성 설치
-
-### pnpm 설치
-
-```bash
-pnpm install
-```
-
-## 🧑‍💻 사용법
-
-### CLI 사용
-
-`pnpm install`을 실행하면 [`tools/cli`](./tools/cli)에 정의된 CLI 명령어들을 바로 사용할 수 있어요.
-
-```bash
-example --ls [directory-path]
-example --mkdir <directory-name>
-example --touch <file-name>
-```
-
-### 빌드
-
-```bash
-pnpm build
-```
-
-### 개발 서버 실행
-
-```bash
-pnpm dev
-```
-
-### 원격 캐싱 설정 (Optional)
-
-필요에 따라 [Turborepo 공식 문서](https://turborepo.com/docs/core-concepts/remote-caching)를 참고하여 원격 캐싱을 사용하도록 설정할 수 있어요.
-
-```bash
-npx turbo login
-npx turbo link
-```
-
 ## 📜 라이선스
 
 이 프로젝트는 MIT 라이선스 하에 배포돼요.
