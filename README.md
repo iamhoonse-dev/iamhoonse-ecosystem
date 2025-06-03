@@ -127,9 +127,11 @@ Happy Hacking!
 
 이 섹션은 다양한 애플리케이션을 포함하고 있어요. 각 앱은 특정 목적을 위해 설계되었으며, Next.js와 같은 최신 기술 스택을 활용하고 있어요.
 
-- **[Docs](./apps/docs)**: Next.js 기반의 문서화 앱이에요.
-- **[Web](./apps/web)**: Next.js 기반의 웹 애플리케이션이에요.
-- **[Frontend Workshop](./apps/frontend-workshop)**: 컴포넌트 개발이랑 테스트를 위한 Storybook 환경이에요.
+| 이름                                              | 설명                                                  |
+| ------------------------------------------------- | ----------------------------------------------------- |
+| **[Docs](./apps/docs)**                           | Next.js 기반의 문서화 앱이에요.                       |
+| **[Web](./apps/web)**                             | Next.js 기반의 웹 애플리케이션이에요.                 |
+| **[Frontend Workshop](./apps/frontend-workshop)** | 컴포넌트 개발이랑 테스트를 위한 Storybook 환경이에요. |
 
 ### 📦 Packages
 
@@ -149,24 +151,30 @@ Happy Hacking!
 
 이 섹션은 프로젝트 전반에서 재사용 가능한 내부 패키지를 포함하고 있어요. `shared` 디렉토리에 있는 패키지들은 npm에 배포되지 않고, 내부적으로만 사용돼요.
 
-- **[Helpers](./shared/helpers)**: 프로젝트 전반에서 재사용 가능한 유틸리티 함수와 공통 로직을 제공하는 내부 패키지예요.
+| 이름                            | 설명                                                                                  |
+| ------------------------------- | ------------------------------------------------------------------------------------- |
+| **[Helpers](./shared/helpers)** | 프로젝트 전반에서 재사용 가능한 유틸리티 함수와 공통 로직을 제공하는 내부 패키지예요. |
 
 ### 🛠️ Tools
 
 이 섹션은 개발 및 테스트를 지원하는 도구들을 포함하고 있어요. 각 도구는 특정 작업을 자동화하거나 간소화하는 데 도움을 줘요.
 
-- **[Playwright Web](./tools/playwright-web)**: Playwright 기반의 웹 테스트 도구예요.
-- **[CLI](./tools/cli)**: 명령줄 작업을 자동화하고 프로젝트 관리 및 개발을 지원하기 위한 도구예요.
-- **[Lighthouse CI](./tools/lighthouse-ci)**: 웹 애플리케이션의 성능, 접근성, SEO 등을 자동으로 측정하고 관리하기 위한 도구예요.
+| 이름                                         | 설명                                                                               |
+| -------------------------------------------- | ---------------------------------------------------------------------------------- |
+| **[Playwright Web](./tools/playwright-web)** | Playwright 기반의 웹 테스트 도구예요.                                              |
+| **[CLI](./tools/cli)**                       | 명령줄 작업을 자동화하고 프로젝트 관리 및 개발을 지원하기 위한 도구예요.           |
+| **[Lighthouse CI](./tools/lighthouse-ci)**   | 웹 애플리케이션의 성능, 접근성, SEO 등을 자동으로 측정하고 관리하기 위한 도구예요. |
 
 ### ⚙️ Configs
 
 이 섹션은 프로젝트 전반에서 사용되는 공통 설정 파일들을 포함하고 있어요. ESLint, TypeScript, Vitest와 같은 도구들의 설정이 포함돼요.
 
-- **[ESLint Config](./configs/eslint-config)**: ESLint 설정을 위한 공통 구성이에요.
-- **[Playwright Config](./configs/playwright-config)**: Playwright 테스트 설정이에요.
-- **[TypeScript Config](./configs/typescript-config)**: TypeScript 설정을 위한 공통 구성이에요.
-- **[Vitest Config](./configs/vitest-config)**: Vitest 테스트 설정을 위한 공통 구성이에요.
+| 이름                                                 | 설명                                       |
+| ---------------------------------------------------- | ------------------------------------------ |
+| **[ESLint Config](./configs/eslint-config)**         | ESLint 설정을 위한 공통 구성이에요.        |
+| **[Playwright Config](./configs/playwright-config)** | Playwright 테스트 설정이에요.              |
+| **[TypeScript Config](./configs/typescript-config)** | TypeScript 설정을 위한 공통 구성이에요.    |
+| **[Vitest Config](./configs/vitest-config)**         | Vitest 테스트 설정을 위한 공통 구성이에요. |
 
 ## 🔀 Workflows
 
