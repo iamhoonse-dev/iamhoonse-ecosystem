@@ -6,11 +6,7 @@ const withNextra = nextra({
 })
 
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
-
-export default withNextra({
-  ...nextConfig,
-
+export const nextConfig = {
   // Set the output to "export" for static site generation
   output: "export",
 
@@ -20,5 +16,18 @@ export default withNextra({
   // disable the default Next.js image optimization to avoid issues with GitHub Pages
   images: {
     unoptimized: true,
-  }
+  },
+
+  // Set the locale configuration for internationalization
+  i18n: {
+    locales: ["en", "ko", "ja"],
+    defaultLocale: "ko",
+  },
+};
+
+/**
+ * Next.js 에 Nextra 를 통합한 설정 구성을 사용합니다.
+ */
+export default withNextra({
+  ...nextConfig,
 });

@@ -8,6 +8,10 @@
 
 `iamhoonse-ecosystem`은 모노레포 관리랑 빌드를 단순화하려고 만든 템플릿이에요. 이 템플릿은 다양한 앱과 패키지를 포함하고 있어서, 팀 협업과 생산성을 높이는 데 도움을 줄 거예요.
 
+## 📖 상세 내용
+
+본 프로젝트에 대한 보다 상세한 내용은 GitHub Pages 에 배포된 [문서](https://iamhoonse-dev.github.io/iamhoonse-ecosystem/ko)를 참고해 주세요.
+
 ## 🔗 구성 요소 간 관계도
 
 이 템플릿은 여러 앱과 패키지로 구성돼 있어요. 각 앱과 패키지 간의 관계는 아래의 다이어그램을 참고해 주세요.
@@ -82,12 +86,12 @@ graph TD
 
 이 섹션은 다양한 애플리케이션을 포함하고 있어요. 각 앱은 특정 목적을 위해 설계되었으며, Next.js와 같은 최신 기술 스택을 활용하고 있어요.
 
-| 이름                                              | 배포 환경                                     | 배포 URL                                            | 설명                                                                            |
-| ------------------------------------------------- | --------------------------------------------- | --------------------------------------------------- | ------------------------------------------------------------------------------- |
-| **[Docs](./apps/docs)**                           | [GitHub Pages](https://pages.github.com/)     | https://iamhoonse-dev.github.io/iamhoonse-ecosystem | Next.js 및 Nextra를 사용한 문서 사이트에요. 이 모노레포에 대한 문서를 제공해요. |
-| **[Web](./apps/web)**                             |                                               |                                                     | Next.js 기반의 웹 애플리케이션이에요.                                           |
-| **[Frontend Workshop](./apps/frontend-workshop)** | [AWS Amplify](https://aws.amazon.com/amplify) | https://storybook.iamhoonse.dev                     | 컴포넌트 개발이랑 테스트를 위한 Storybook 환경이에요.                           |
-| **[Portfolio](./apps/portfolio)**                 | [AWS Amplify](https://aws.amazon.com/amplify) | https://portfolio.iamhoonse.dev                     | 개인 포트폴리오 및 소개를 위한 Next.js 기반 앱이에요.                           |
+| 이름                                              | 배포 환경                                     | 배포 URL                                               | 설명                                                                            |
+| ------------------------------------------------- | --------------------------------------------- | ------------------------------------------------------ | ------------------------------------------------------------------------------- |
+| **[Docs](./apps/docs)**                           | [GitHub Pages](https://pages.github.com/)     | https://iamhoonse-dev.github.io/iamhoonse-ecosystem/ko | Next.js 및 Nextra를 사용한 문서 사이트에요. 이 모노레포에 대한 문서를 제공해요. |
+| **[Web](./apps/web)**                             |                                               |                                                        | Next.js 기반의 웹 애플리케이션이에요.                                           |
+| **[Frontend Workshop](./apps/frontend-workshop)** | [AWS Amplify](https://aws.amazon.com/amplify) | https://storybook.iamhoonse.dev                        | 컴포넌트 개발이랑 테스트를 위한 Storybook 환경이에요.                           |
+| **[Portfolio](./apps/portfolio)**                 | [AWS Amplify](https://aws.amazon.com/amplify) | https://portfolio.iamhoonse.dev                        | 개인 포트폴리오 및 소개를 위한 Next.js 기반 앱이에요.                           |
 
 ### 📦 Packages
 
