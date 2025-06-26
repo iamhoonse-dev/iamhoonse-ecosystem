@@ -1,0 +1,22 @@
+import { Cards } from "nextra/components";
+import LocalizedCard from "../../../components/LocalizedCard";
+
+# 🧩 共通設定構成
+
+`configs`ディレクトリは、モノレポ全体で共有する共通設定を定義します。
+
+## 🎯 目的
+
+このように共通設定を定義することで、モノレポ内のすべてのプロジェクトが一貫した開発環境を維持できます。
+これはコード品質を高め、開発者体験を向上させ、保守性を高めます。
+
+## 📁 主な構成
+
+このディレクトリには、ESLint、TypeScript、Vitest、Playwrightなどのツールの設定ファイルが含まれています。
+
+<Cards>
+  <LocalizedCard title="🛡️ ESLint設定" href="/configs/eslint-config" />
+  <LocalizedCard title="🟦 TypeScript設定" href="/configs/typescript-config" />
+  <LocalizedCard title="🧪 Vitest設定" href="/configs/vitest-config" />
+  <LocalizedCard title="🎭 Playwright設定" href="/configs/playwright-config" />
+</Cards>

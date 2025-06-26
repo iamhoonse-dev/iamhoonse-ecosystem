@@ -13,6 +13,25 @@
 
 본 프로젝트에 대한 보다 상세한 내용은 GitHub Pages 에 배포된 [문서](https://iamhoonse-dev.github.io/iamhoonse-ecosystem/ko)를 참고해 주세요.
 
+## 🗃️ 주요 외부 패키지/도구 의존성
+
+이 템플릿은 개발 환경 구성과 빌드 프로세스를 간소화하기 위해 여러 외부 패키지와 도구에 의존하고 있어요. 아래는 주요 의존성 목록이에요:
+
+| 카테고리              | 패키지/도구 이름 및 설명                                                                                            |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| **패키지 매니저**     | pnpm                                                                                                                |
+| **모노레포 관리**     | turborepo (turbo)                                                                                                   |
+| **언어/트랜스파일러** | typescript                                                                                                          |
+| **포맷터**            | prettier                                                                                                            |
+| **커밋/훅**           | husky, @commitlint/cli, @commitlint/config-conventional                                                             |
+| **린터**              | eslint                                                                                                              |
+| **테스팅**            | vitest, @testing-library/react, @testing-library/dom, @testing-library/jest-dom, @testing-library/user-event, jsdom |
+| **빌드/번들러**       | next, @vitejs/plugin-react, vite-tsconfig-paths                                                                     |
+| **UI 프레임워크**     | react, react-dom                                                                                                    |
+| **E2E/성능테스트**    | playwright, lighthouse, lighthouse-ci                                                                               |
+| **버저닝**            | changesets                                                                                                          |
+| **문서화**            | nextra, mdx                                                                                                         |
+
 ## 🔗 구성 요소 간 관계도
 
 이 템플릿은 여러 앱과 패키지로 구성돼 있어요. 각 앱과 패키지 간의 관계는 아래의 다이어그램을 참고해 주세요.
@@ -78,7 +97,7 @@ graph TD
     VXGS("web") --> LRHC("@iamhoonse-js/vitest-config")
 ```
 
-> 💡 **참고:**  
+> 💡 **참고:**
 > 이 다이어그램은 [Mermaid](https://mermaid-js.github.io/mermaid/#/)를 사용해서 그렸어요. 이 도구는 텍스트 기반으로 다이어그램을 그릴 수 있게 해줘요. 아래의 코드를 복사해서 [Mermaid Live Editor](https://mermaid-js.github.io/mermaid-live-editor/)에 붙여넣으면 다이어그램을 시각적으로 확인할 수 있어요.
 
 ## 📦 구성 요소
@@ -144,12 +163,14 @@ graph TD
 ### 🧪 **[Test](.github/workflows/test.yml)**
 
 [`test.yml`](.github/workflows/test.yml) 파일에 정의되어 있으며, 프로젝트의 주요 테스트(유닛, E2E, Lighthouse, Storybook 등)를 통합적으로 실행해요.
+이 Workflow는 다음과 같은 테스트를 포함해요: \
+(🐳는 GitHub Actions에서 Docker 컨테이너를 사용해서 실행되는 테스트를 의미해요)
 
 - 이 Workflow는 다음과 같은 테스트를 포함해요:
   - [unit test](.github/workflows/test.yml#L13)
-  - [e2e test](.github/workflows/test.yml#L167)
-  - [lighthouse test](.github/workflows/test.yml#L139)
-  - [storybook test](.github/workflows/test.yml#L209)
+  - 🐳 [e2e test](.github/workflows/test.yml#L167)
+  - 🐳 [lighthouse test](.github/workflows/test.yml#L139)
+  - 🐳 [storybook test](.github/workflows/test.yml#L209)
 - 이들 중 e2e, lighthouse, storybook 테스트는 [`docker-compose.gha.yaml`](./docker-compose.gha.yaml) 파일을 사용해서 통합 테스트 환경을 설정해요.
 - 다양한 서비스(web, playwright, lighthouse, storybook 등)를 컨테이너로 띄워 실제 서비스 환경과 유사하게 테스트를 수행해요.
 
@@ -167,7 +188,7 @@ graph TD
 
 - 이 Workflow는 `docs` 앱의 빌드를 수행하고, 빌드된 결과물을 GitHub Pages에 배포해요.
 - GitHub Pages 로의 배포를 위해서는 레포지토리의 Settings 에서 Pages를 활성화해야 해요.
-- 배포된 문서는 [https://<USER_ID>.github.io/<PROJECT_NAME>](https://iamhoonse-dev.github.io/turborepo-template/) 형식의 URL로 접근할 수 있어요.
+- 배포된 문서는 [https://<USER_ID>.github.io/<PROJECT_NAME>](https://iamhoonse-dev.github.io/iamhoonse-ecosystem/ko) 형식의 URL로 접근할 수 있어요.
 
 ## 📜 라이선스
 

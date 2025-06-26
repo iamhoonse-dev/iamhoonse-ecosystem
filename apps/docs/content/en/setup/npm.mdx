@@ -1,0 +1,57 @@
+# 📦 NPM
+
+This project is configured to allow some packages to be published to NPM.
+This document explains the basic setup for publishing to NPM.
+
+## Setting up the npm token (Optional)
+
+You need to set the `NPM_TOKEN` as a secret variable in your project.
+This token is used to publish packages to npm.
+To add `NPM_TOKEN` to GitHub Secrets, follow these steps:
+
+1. Go to your GitHub repository page.
+2. Click the `Settings` tab.
+3. Go to the `Secrets and variables` section.
+4. Select `Actions`.
+5. Click the `New repository secret` button.
+6. Add the token issued from [npm](https://www.npmjs.com/) as `NPM_TOKEN`.
+
+```yaml filename=".github/workflows/release.yml" {12}
+      - name: Create Release Pull Request
+        uses: changesets/action@v1
+        with:
+          version: pnpm version-packages
+          # publish: pnpm publish-packages # fixme: if you want to publish packages, uncomment this line
+          commit: |
+            chore(release): 🦋 versioning packages by changesets
+          title: |
+            🦋 Versioning packages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }} # fixme: if you want to publish packages, set this secret on your repo
+```
+
+## Workflow setup for npm publishing (Optional)
+
+This project defines a release workflow for NPM publishing, adopting a changesets-based deployment process.
+This workflow automatically updates package versions, records changes, and publishes to NPM when a PR is approved.
+
+### Uncommenting the release.yml file
+
+Package versioning in the release workflow is enabled by default, but npm publishing is not.
+To enable npm publishing, you need to uncomment the `publish` step in the `release.yml` file.
+
+```yaml filename=".github/workflows/release.yml" {5}
+      - name: Create Release Pull Request
+        uses: changesets/action@v1
+        with:
+          version: pnpm version-packages
+          # publish: pnpm publish-packages # fixme: if you want to publish packages, uncomment this line
+          commit: |
+            chore(release): 🦋 versioning packages by changesets
+          title: |
+            🦋 Versioning packages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }} # fixme: if you want to publish packages, set this secret on your repo
+```

@@ -1,9 +1,11 @@
 import type { ComponentProps, ReactNode } from "react";
+import type { PageMapItem } from "nextra";
 import { Footer, Layout, Navbar } from "nextra-theme-docs";
 import { Banner, Head } from "nextra/components";
 import { getPageMap } from "nextra/page-map";
 import { nextConfig } from "../../next.config";
 import "nextra-theme-docs/style.css";
+import "@iamhoonse-js/react-ui/base.css";
 
 /**
  * this function generates static parameters for the internationalization (i18n) locales
@@ -23,10 +25,12 @@ export const metadata = {
   // For more information on metadata API, see: https://nextjs.org/docs/app/building-your-application/optimizing/metadata
 };
 
+const logo = <b>iamhoonse-ecosystem</b>;
+
 const banner = <Banner storageKey="some-key">Nextra 4.0 is released 🎉</Banner>;
 const navbar = (
   <Navbar
-    logo={<b>iamhoonse-ecosystem</b>}
+    logo={logo}
     // ... Your additional navbar options
   />
 );
@@ -36,6 +40,11 @@ const navbar = (
 const currentYear = new Date().getFullYear();
 
 const footer = <Footer>MIT {currentYear} © Nextra.</Footer>;
+
+// feedbackOptions is used to configure the feedback options in the Nextra layout.
+const feedbackOptions: ComponentProps<typeof Layout>["feedback"] = {
+  content: null,
+};
 
 /**
  * getLabelFromLocale is a utility function that returns a localized label for a given locale string.
@@ -54,6 +63,23 @@ function getLabelFromLocale(locale: string) {
       return locale.toUpperCase();
   }
 }
+
+/**
+ * mapLocale is a utility function that maps a PageMapItem to include the locale in its route.
+ * It prefixes the route with the locale and recursively maps any children pages.
+ *
+ * @param locale - The locale string to prefix the route with.
+ */
+const mapLocale =
+  (locale: string) =>
+  (page: PageMapItem): PageMapItem => ({
+    ...page,
+    // Ensure the route is prefixed with the locale
+    // @ts-expect-error TS2339
+    route: `/${locale}${page.route}`,
+    // @ts-expect-error TS2339
+    children: page.children?.map(mapLocale(locale)),
+  });
 
 /**
  * i18nDropdownMenu is used to generate a dropdown menu for language selection in the Nextra layout.
@@ -83,12 +109,7 @@ export default async function RootLayout({ children, params }: Props) {
   const { locale } = await params;
 
   const pageMap = await getPageMap(`/${locale}`);
-  const pageMapLocale = pageMap.map((page) => ({
-    ...page,
-    // Ensure the route is prefixed with the locale
-    // @ts-expect-error TS2339
-    route: `/${locale}${page.route}`,
-  }));
+  const pageMapLocale = pageMap.map(mapLocale(locale));
 
   return (
     <html
@@ -113,6 +134,8 @@ export default async function RootLayout({ children, params }: Props) {
           footer={footer}
           // ... Your additional layout options
           i18n={i18nDropdownMenu}
+          navigation={false}
+          feedback={feedbackOptions}
         >
           {children}
         </Layout>

@@ -1,0 +1,247 @@
+import { Callout } from "nextra/components";
+import LocalizedLink from "../../../components/LocalizedLink";
+
+# 🏗️ ビルド方式
+
+このドキュメントは、このプロジェクトでパッケージがどのようにビルドされるかについて説明し、ビルドプロセスの理解を助けるために作成されました。
+
+## ⚡ Viteベースのビルド
+
+このプロジェクトで提供されるパッケージはViteを使ってビルドされます。
+
+|パッケージ|ビルド方式|
+|---|---|
+|<LocalizedLink href="packages/default-packages/browser-utils">`packages/browser-utils`</LocalizedLink>|[Vite](https://vitejs.dev/)|
+|<LocalizedLink href="packages/default-packages/http-clients">`http-clients`</LocalizedLink>|[|[Vite](https://vitejs.dev/)|
+|<LocalizedLink href="packages/default-packages/node-utils">`packages/node-utils`</LocalizedLink>|[Vite](https://vitejs.dev/)|
+|<LocalizedLink href="packages/default-packages/react-utils">`packages/react-utils`</LocalizedLink>|[Vite](https://vitejs.dev/)|
+|<LocalizedLink href="packages/default-packages/react-ui">`packages/react-ui`</LocalizedLink>|[Vite](https://vitejs.dev/)|
+
+<Callout type="info">
+  <LocalizedLink href="packages/default-packages/eslint-plugin-sample">`eslint-plugin-sample`</LocalizedLink>のようなESLintプラグインパッケージは、別途ビルド工程を経ないように設計されています。
+  代わりに、ESLintプラグインパッケージは `lib` ディレクトリ内の `index.js` ファイルをそのまま使用するように
+  `package.json` の `files`, `main`, `exports` フィールドで設定されています。
+</Callout>
+
+### 採用意図
+
+Viteを使ってパッケージをビルドする理由は以下の通りです：
+
+> _"各パッケージをnpmパッケージとして公開することを前提に、Viteのビルド機能を使って
+各パッケージのソースコードをバンドルし、最適化された成果物を生成するためです。"_
+
+### 特徴
+
+このプロジェクトで提供されるパッケージは共通して次のような特徴を持つように設計されています：
+
+#### 1) ESModuleおよびCommonJSシステムのサポート
+
+各パッケージはESModule（`.es.js`）とCommonJS（`.cjs.js`）形式でビルドされ、さまざまな環境で利用できるようになっています。
+これはViteのビルド設定でライブラリモードを利用し、Rollupの設定を活用して実現されています。
+
+```js filename="packages/browser-utils/vite.config.js" {11}
+/// <reference types="vitest" />
+// ...他のimport文...
+
+// https://vitejs.dev/config/
+export default defineConfig({
+  // ...他の設定...
+  build: {
+    // ...他の設定...
+    lib: {
+      // ...他の設定...
+      formats: ["es", "cjs"], // ESModuleとCommonJS形式でビルド
+      fileName: (format, entryName) => `${entryName}/index.${format}.js`,
+    },
+  },
+});
+
+```
+#### 2) 型定義ファイルの提供
+
+各パッケージはTypeScriptで記述されており、ビルド時に型定義ファイル（`.d.ts`）が自動生成されます。
+これは`vite-plugin-dts`プラグインを使い、各エントリごとに型定義ファイルを生成するように設定することで実現されています。
+
+```js filename="packages/browser-utils/vite.config.js" {3,8}
+/// <reference types="vitest" />
+import { defineConfig } from "vite";
+import dtsPlugin from "vite-plugin-dts";
+// ...他のimport文...
+
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [dtsPlugin({ include: ["src"] }), tsConfigPaths()],
+  // ...他の設定...
+});
+
+```
+
+#### 3) ツリーシェイキングおよびコードスプリッティングのサポート
+
+各パッケージはViteのツリーシェイキングおよびコードスプリッティング機能を活用し、未使用のコードがビルド成果物に含まれないよう最適化されています。
+
+これは各パッケージの`package.json`で`exports`フィールドを使い、各機能単位をサブモジュールとして分離し、
+
+```json filename="packages/browser-utils/package.json"
+{
+  "exports": {
+    "./dom": {
+      "types": "./dist/dom/index.d.ts",
+      "import": "./dist/dom/index.es.js",
+      "require": "./dist/dom/index.cjs.js"
+    },
+    "./msw": {
+      "types": "./dist/msw/index.d.ts",
+      "import": "./dist/msw/index.es.js",
+      "require": "./dist/msw/index.cjs.js"
+    },
+    "./string": {
+      "types": "./dist/string/index.d.ts",
+      "import": "./dist/string/index.es.js",
+      "require": "./dist/string/index.cjs.js"
+    }
+  },
+  // ...他の設定...
+}
+```
+
+これらを構成するソースコードファイルそれぞれがエントリポイントとしてバンドルされるように設定することで実現されています。
+
+```js filename="packages/browser-utils/vite.config.js" {11-22}
+/// <reference types="vitest" />
+// ...他のimport文...
+import { runWithGlob } from "@repo/helpers/runWithGlob";
+
+// https://vitejs.dev/config/
+export default defineConfig({
+  // ...他の設定...
+  build: {
+    lib: {
+      // ...他の設定...
+      entry: Object.fromEntries(
+        runWithGlob(
+          "src/**/*.{ts,tsx}",
+          (file) => [
+            // エントリ名
+            file.replace(/^src\//, "").replace(/index\.(ts|tsx)$/, ""),
+            // 絶対パス
+            resolve(__dirname, file),
+          ],
+          ["src/**/*.{d,spec}.ts"],
+        ),
+      ),
+      fileName: (format, entryName) => `${entryName}/index.${format}.js`,
+    },
+  },
+});
+```
+
+#### 4) 開発の利便性
+
+各パッケージは開発環境での利便性を高めるため、次のような機能を提供しています：
+
+- `pnpm dev`コマンドによるHMR機能をサポート
+- TypeScriptチェックおよびLinterチェック用のスクリプトを提供
+- TypeScriptパスエイリアスをサポートし、ワークスペース内のコードを`import`する際に便利なモジュールパスが利用可能
+- Vitestベースのテスト実行用の基本的な環境とスクリプトを提供
+  - ブラウザDOMやReact関連パッケージの場合、`@testing-library/react`および`@testing-library/jest-dom`パッケージを使ってテスト環境を構築
+
+## 他のパッケージやアプリケーションでの利用
+
+このプロジェクトのパッケージを依存関係として持つ他のパッケージやアプリケーションでは、各パッケージのビルド済み成果物（`dist`）を利用するように設定されています。
+この設定は各パッケージの `package.json` の `files`, `exports` フィールドで定義されています。
+
+例として、`react-utils` パッケージの `package.json` ファイルは次のように設定されています：
+
+<Callout type="info">
+  この設定により、`pnpm` で `react-utils` パッケージを依存関係に持つ他のパッケージやアプリケーションが
+  `react-utils` をインストールする際、ビルド済み成果物（`dist`）が利用されます。
+  つまり、`react-utils` を利用する他のパッケージやアプリケーションの `node_modules/@repo/react-utils` ディレクトリには
+  ビルド済み成果物（`dist`）が含まれることになります。
+</Callout>
+
+```json filename="packages/react-utils/package.json"
+{
+  // ...existing code...
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    "./hooks": {
+      "types": "./dist/hooks/index.d.ts",
+      "import": "./dist/hooks/index.es.js",
+      "require": "./dist/hooks/index.cjs.js"
+    },
+    "./hocs": {
+      "types": "./dist/hocs/index.d.ts",
+      "import": "./dist/hocs/index.es.js",
+      "require": "./dist/hocs/index.cjs.js"
+    },
+    "./providers": {
+      "types": "./dist/providers/index.d.ts",
+      "import": "./dist/providers/index.es.js",
+      "require": "./dist/providers/index.cjs.js"
+    }
+  },
+  // ...existing code...
+}
+```
+
+## 開発環境（`pnpm dev`）でのHMRサポート
+
+前述の通り、このプロジェクトのパッケージを依存関係として持つ他のパッケージやアプリケーションでは
+実際のビルド済み成果物（`dist`）を利用するように設計されています。
+
+そのため、開発環境で `pnpm dev` コマンドを実行した場合も
+各パッケージのビルド済み成果物（`dist`）を使って開発サーバーが起動します。
+
+このとき、開発中のパッケージの変更をリアルタイムで反映する必要があるため、
+ViteのHMR（Hot Module Replacement）機能を利用し、
+各パッケージの `dev` スクリプトは次のように設定されています。
+
+```json filename="packages/react-utils/package.json"
+{
+  // ...existing code...
+  "scripts": {
+    "dev": "tsc -b && vite build --watch",
+    // ...other scripts...
+  },
+  // ...existing code...
+}
+```
+
+## LinterチェックおよびTypeScriptチェック
+
+このプロジェクトのパッケージを依存関係として持つ他のパッケージやアプリケーションでは
+実際のビルド済み成果物（`dist`）を利用するように設計されているため、
+
+もし依存先のパッケージやアプリケーションでLinterチェック（`pnpm run lint`）やTypeScriptチェック（`pnpm run check-types`）を実行する際に
+`dist` ディレクトリが存在しない場合、エラーが発生する可能性があります。
+
+そのため、LinterチェックやTypeScriptチェックを実行する前に、すべてのパッケージの `dist` ディレクトリが生成されていることを保証する必要があります。
+これを実現するため、Turborepoの `lint` および `check-types` タスクは
+ビルドタスク（`build`）に依存するように次のように設定されています。
+
+```json filename="turbo.json"
+{
+  // ...existing code...
+  "tasks": {
+    // ...other tasks...
+    "lint": {
+      "dependsOn": ["build", "^lint"]
+    },
+    "check-types": {
+      "dependsOn": ["build", "^check-types"]
+    },
+    // ...other tasks...
+  },
+  // ...existing code...
+}
+```
+
+## 📌 参考
+
+このプロジェクトで採用しているビルド方式の詳細は、以下のドキュメントを参照してください：
+
+- [Turborepo公式ドキュメント > publishing-libraries](https://turborepo.com/docs/guides/publishing-libraries)
+- [Turborepo公式ドキュメント > creating-an-internal-package](https://turborepo.com/docs/crafting-your-repository/creating-an-internal-package)
