@@ -1,0 +1,107 @@
+import { Callout } from "nextra/components";
+import CodeRepositoryLink from "../../../components/CodeRepositoryLink";
+
+# ✏️ 書き方
+
+このドキュメントは、ドキュメントの作成方法に関するガイドを提供します。ドキュメントを作成する前に、このガイドをお読みください。
+
+## 🔗 リンク作成ガイド
+
+### ロケールを反映する
+
+このドキュメントアプリケーションは多言語に対応しています。そのため、リンクを作成する際は必ずパス名（pathname）にロケールを指定する必要があります。
+つまり、ロケールはドキュメントの言語と地域を示し、URLパスに含める必要があります。
+
+#### 基本的な使い方
+
+リンクを作成する際はロケールを反映する必要があります。
+例えば、日本語で書かれた `content/ja/sample.mdx` ドキュメントへのリンクは `/ja/sample` に設定する必要があります。
+以下は正しいリンクの例です：
+
+```mdx
+[日本語ドキュメントサンプル](/ja/sample)
+```
+
+#### `<LocalizedLink>` コンポーネントの使用
+
+このドキュメントアプリケーションでは `<LocalizedLink>` コンポーネントを提供しています。
+このコンポーネントを使用すると、ロケールが自動的に反映されたリンクを生成できます。
+
+例えば、現在ユーザーが日本語ページを見ている場合、以下のようにコードを書くと
+リンクは自動的に `/ja/sample` に変換されます：
+
+<Callout type="info">
+  現在のプロジェクトでは絶対パスでのimportはできません。\
+  そのため、`<LocalizedLink>` コンポーネントでリンクを作成する際は相対パスを使用してください。
+</Callout>
+
+```mdx filename="link-usage.mdx"
+import LocalizedLink from "../../../components/LocalizedLink";
+
+<LocalizedLink href="/setup/github-pages">
+  日本語ドキュメントサンプル
+</LocalizedLink>
+```
+
+```html filename="rendered-link.html"
+<a
+  target="_blank"
+  rel="noopener noreferrer"
+  href="/ja/setup/github-pages"
+>
+  日本語ドキュメントサンプル
+</a>
+```
+
+### `<CodeRepositoryLink>` コンポーネントの使い方
+
+このドキュメントアプリケーションでは `<Callout>` コンポーネントを提供しています。
+このコンポーネントを使用すると、コードリポジトリへのリンクを簡単に作成できます。
+
+例えば、次のようにコードを書くと、
+リンクはGitHubリポジトリの該当パスに自動的に変換されます：
+
+```mdx filename="code-repository-link-usage.mdx"
+import CodeRepositoryLink from "../../../components/CodeRepositoryLink";
+
+<CodeRepositoryLink
+  href="/packages/react-utils/src/hooks"
+>
+  react-utils/hooks
+</CodeRepositoryLink>
+```
+
+```html filename="rendered-code-repository-link.html"
+<a
+  target="_blank"
+  rel="noopener noreferrer"
+  href="https://github.com/iamhoonse-dev/turborepo-template/tree/main/packages/react-utils/src/hooks"
+>
+  <!-- 注: iamhoonse-dev/turborepo-template の部分は環境変数 GITHUB_REPOSITORY の値に置き換わります。 -->
+  react-utils/hooks
+</a>
+```
+
+<Callout type="info">
+  自動生成されるパスは環境変数 `GITHUB_REPOSITORY` によって異なります。例えば、
+  - 環境変数 `GITHUB_REPOSITORY` が `your-name/repo-name` に設定されていて、
+  - コンポーネントの `href` プロパティに指定されたパスが `/packages/react-utils/src/hooks` の場合、
+
+  最終的に生成されるリンクは `https://github.com/your-name/repo-name/tree/main/packages/react-utils/src/hooks` になります。
+  詳細については <CodeRepositoryLink href="/apps/docs/components/CodeRepositoryLink">`CodeRepositoryLink` コンポーネントのコード</CodeRepositoryLink> を参照してください。
+</Callout>
+
+## 🖼️ 画像添付ガイド
+
+### 画像のアップロード
+
+ドキュメントで使用する画像は `apps/docs/public` ディレクトリにアップロードしてください。
+
+### ドキュメントへの画像挿入
+
+例えば `apps/docs/public/assets/images/sample-image.png` に画像をアップロードした場合、
+ドキュメントで画像を挿入するには次のように記述します：
+
+```mdx filename="image-usage.mdx"
+![画像の説明](/assets/images/sample-image.png)
+```
